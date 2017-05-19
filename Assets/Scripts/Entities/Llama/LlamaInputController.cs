@@ -8,7 +8,7 @@ public class LlamaInputController : MonoBehaviour
 
     private Player playerInput;
 
-    [Header("Input Variables")]
+    [Header("Input Values")]
     public PlayerNumber playerNumber;
     [Space(10)]
     public float leftXAxis;
@@ -16,6 +16,10 @@ public class LlamaInputController : MonoBehaviour
     [Space(10)]
     public float rightXAxis;
     public float rightYAxis;
+
+    [Header("Input Vectors")]
+    public Vector2 movementVector;
+    public Vector2 headVector;
 
     private void Start()
     {
@@ -48,10 +52,13 @@ public class LlamaInputController : MonoBehaviour
 
     private void GetInput()
     {
-        leftXAxis = playerInput.GetAxis("LeftHorizontalAxis");
-        leftYAxis = playerInput.GetAxis("LeftVerticalAxis");
+        leftXAxis = playerInput.GetAxis("LeftHorizontalMovement");
+        leftYAxis = playerInput.GetAxis("LeftVerticalAxisMovement");
 
-        rightXAxis = playerInput.GetAxis("RightHorizontalAxis");
-        rightYAxis = playerInput.GetAxis("RightVerticalAxis");
+        rightXAxis = playerInput.GetAxis("RightHorizontalHeadMovement");
+        rightYAxis = playerInput.GetAxis("RightVerticalHeadMovement");
+
+        movementVector.Set(leftXAxis, leftYAxis);
+        headVector.Set(rightXAxis, rightYAxis);
     }
 }
