@@ -5,18 +5,33 @@ using UnityEngine.UI;
 
 public class PlayerCharacter : MonoBehaviour {
 
+	[Header("Character Identification")]
+	[Space(10)]
+	public GameObject characterGameObject;
+	public string characterName;
+	[Tooltip("This is the characterID that identifies numerically which character is which")]
+	public float characterID;
+	[Tooltip("This is the number that specifies which variant of the character is in use 0-10")]
+	public float characterVariantNumber;
 
-	public string playerName;
-	public GameObject playerGameObject;
-	public int playerID;
-	public int playerVariantNumber;
-	public int playerCharacterIncomingKnockbackModifier;
-	public int playerCharacterOutgoingKnockbackModifier;
-	public int victoryCount;
-	public int knockoutCount;
-	public Sprite playerPortrait;
+	[Space(10)]
+	[Header("Character Combat Info")]
+	[Space(10)]
+	[Range(0.0f, 10.0f)]
+	public float characterIncomingKnockbackModifier;
+	[Range(0.0f, 10.0f)]
+	public float characterOutgoingKnockbackModifier;
+	public float victoryCount;
+	public float knockoutCount;
+	[Tooltip("This value makes magic under the hood, modify for fun 0-infinity")]
+	public float spronginess;
+
+	[Space(10)]
+	[Header("CharacterPersonality")]
+	[Space(10)]
+	public Sprite characterPortrait;
 	public AudioClip victoryBleat;
-	public int defaultSpronginess;
+
 
 
 	// Use this for initialization
@@ -34,16 +49,16 @@ public class PlayerCharacter : MonoBehaviour {
 	public void AddToKnockoutCount(){
 		knockoutCount++;
 	}
-	public void DebugPrintout(){
-		Debug.Log ("Does the playerCharacter have a name? " + TrueIfNotNull(playerName) + " and its name is: " + playerName);
-		Debug.Log ("Does the playerCharacter have a GameObject? " + TrueIfNotNull(playerGameObject) + " and its name is: " + playerGameObject.name);
-		Debug.Log ("Does the playerCharacter have an ID? " + TrueIfNotNull(playerID) + " and its ID is: " + playerID);
-		Debug.Log ("Does the playerCharacter have an playerVariantNumber? " + TrueIfNotNull(playerVariantNumber) + " and its PlayerVariantNumber is: " + playerVariantNumber);
-		Debug.Log ("Does the playerCharacter have an victoryCount? " + TrueIfNotNull(victoryCount) + " and its victoryCount is: " + victoryCount);
-		Debug.Log ("Does the playerCharacter have an victoryBleat? " + TrueIfNotNull(victoryBleat) + " and its victoryBleat is: " + victoryBleat.name);
-		Debug.Log ("Does the playerCharacter have an defaultSpronginess? " + TrueIfNotNull(defaultSpronginess) + " and its defaultSpronginess is: " + defaultSpronginess);
-		Debug.Log ("Does the playerCharacter have an playerCharacterIncomingKnockbackModifier? " + TrueIfNotNull(playerCharacterIncomingKnockbackModifier) + " and its playerCharacterIncomingKnockbackModifier is: " + playerCharacterIncomingKnockbackModifier);
-		Debug.Log ("Does the playerCharacter have an playerCharacterOutgoingKnockbackModifier? " + TrueIfNotNull(playerCharacterOutgoingKnockbackModifier) + " and its defaultSpronginess is: " + playerCharacterOutgoingKnockbackModifier);
+	public void DebugPrfloatout(){
+		Debug.Log ("Does the characterCharacter have a name? " + TrueIfNotNull(characterName) + " and its name is: " + characterName);
+		Debug.Log ("Does the characterCharacter have a GameObject? " + TrueIfNotNull(characterGameObject) + " and its name is: " + characterGameObject.name);
+		Debug.Log ("Does the characterCharacter have an ID? " + TrueIfNotNull(characterID) + " and its ID is: " + characterID);
+		Debug.Log ("Does the characterCharacter have an characterVariantNumber? " + TrueIfNotNull(characterVariantNumber) + " and its characterVariantNumber is: " + characterVariantNumber);
+		Debug.Log ("Does the characterCharacter have an victoryCount? " + TrueIfNotNull(victoryCount) + " and its victoryCount is: " + victoryCount);
+		Debug.Log ("Does the characterCharacter have an victoryBleat? " + TrueIfNotNull(victoryBleat) + " and its victoryBleat is: " + victoryBleat.name);
+		Debug.Log ("Does the characterCharacter have an spronginess? " + TrueIfNotNull(spronginess) + " and its spronginess is: " + spronginess);
+		Debug.Log ("Does the characterCharacter have an characterCharacterIncomingKnockbackModifier? " + TrueIfNotNull(characterIncomingKnockbackModifier) + " and its characterIncomingKnockbackModifier is: " + characterIncomingKnockbackModifier);
+		Debug.Log ("Does the characterCharacter have an characterCharacterOutgoingKnockbackModifier? " + TrueIfNotNull(characterOutgoingKnockbackModifier) + " and its characterOutgoingKnockbackModifier is: " + characterOutgoingKnockbackModifier);
 	}
 
 	public bool TrueIfNotNull<T>(T variableToTest){
