@@ -48,7 +48,7 @@ public class PlayerCharacter : MonoBehaviour {
 	}
 
 	bool TrueIfNotNull<T>(T variableToTest){
-		if (T == null) {
+		if (variableToTest == null) {
 			return false;
 		} else {
 			return true;
