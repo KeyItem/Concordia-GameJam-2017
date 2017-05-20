@@ -14,14 +14,14 @@ TagManager:
   - 
   - 
   - Floor
-  - Players
+  - 
   - Objects
   - Environment
   - Joints
-  - 
-  - 
-  - 
-  - 
+  - PlayerRed
+  - PlayerBlue
+  - PlayerGreen
+  - PlayerYellow
   - 
   - 
   - 

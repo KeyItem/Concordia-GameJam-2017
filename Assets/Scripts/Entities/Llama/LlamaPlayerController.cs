@@ -6,10 +6,11 @@ public class LlamaPlayerController : MonoBehaviour
     [Header("Llama Body Parts")]
     public Rigidbody mainBody;
     [Space(10)]
-    public Rigidbody neckBody;
+    public Rigidbody baseOfNeck;
 
     [Header("Llama Movement Values")]
     public float baseMovementSpeed;
+    public float maxMovementSpeed;
     [Space(10)]
     public float moveSmoothTime;
 
@@ -29,15 +30,34 @@ public class LlamaPlayerController : MonoBehaviour
     private Vector3 turningVector;
 
     [Header("Llama Neck Movement Values")]
+    public GameObject[] neckPieces;
+    [Space(10)]
     public float baseNeckControlSpeed;
 
     private Vector3 headVector;
+
+    public bool isMovingHead = false;
+
+    [Header("Llama Jumping Values")]
+    public float jumpForce;
+
+    [Header("Ground Check Values")]
+    public float groundRayDistance;
+
+    public LayerMask groundMask;
+
+    public bool isGrounded = true;
 
     [Header("Debug")]
     public Vector2 inputMovementVector;
     public Vector2 inputHeadVector;
     [Space(10)]
     public float currentVelocity;
+
+    private void Update()
+    {
+        GroundCheck();
+    }
 
     private void FixedUpdate()
     {
@@ -61,16 +81,22 @@ public class LlamaPlayerController : MonoBehaviour
     {
         if (inputMovementVector != Vector2.zero)
         {
-            targetSpeed = baseMovementSpeed * inputMovementVector.magnitude;
+            if (isGrounded)
+            {
+                targetSpeed = baseMovementSpeed * inputMovementVector.magnitude;
 
-            currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref moveSmoothVelocity, moveSmoothTime);
+                currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref moveSmoothVelocity, moveSmoothTime);
 
-            movingVector = transform.forward * currentSpeed;
+                movingVector = transform.forward * currentSpeed;
 
-            mainBody.AddForce(movingVector * Time.fixedDeltaTime, ForceMode.Impulse);           
+                if (currentVelocity < maxMovementSpeed)
+                {
+                    mainBody.AddForce(movingVector * Time.fixedDeltaTime, ForceMode.Impulse);
+                }           
+            }          
         }
 
-        currentVelocity = mainBody.velocity.magnitude;
+        currentVelocity = Mathf.Round(mainBody.velocity.magnitude);
     }
 
     private void ManageBodyRotation()
@@ -87,7 +113,35 @@ public class LlamaPlayerController : MonoBehaviour
     {
         if (headVector != Vector3.zero)
         {
-            neckBody.AddForce(headVector * baseNeckControlSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
+            baseOfNeck.AddForce(headVector * baseNeckControlSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
+
+            isMovingHead = true;
+        }
+        else
+        {
+            isMovingHead = false;
+        }
+    }
+
+    private void GroundCheck()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, groundRayDistance, groundMask))
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
+    public void Jump()
+    {
+        if (isGrounded)
+        {
+            mainBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+            isGrounded = false;
         }
     }
 }
