@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: f5db3c6c8b2af46f8991eb70392630bb
+timeCreated: 1495315354
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Unicorn Regular
+  fontNames:
+  - Unicorn Regular
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
