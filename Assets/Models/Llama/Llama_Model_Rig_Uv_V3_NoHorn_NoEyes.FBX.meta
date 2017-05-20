@@ -1,50 +1,47 @@
 fileFormatVersion: 2
-guid: 3be38be8f8d8ec346ad7c8f9da194f8e
-timeCreated: 1495224912
+guid: 9ae2e889a8500b04b97553022d45355e
+timeCreated: 1495237246
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Face
-    100002: Head
-    100004: Horn
-    100006: Left_Back_Lower_Leg
-    100008: Left_Back_Upper_Leg
-    100010: Left_Front_Lower_Leg
-    100012: Left_Front_Upper_Leg
-    100014: Llama
-    100016: //RootNode
-    100018: Right_Back_Lower_Leg
-    100020: Right_Back_Upper_Leg
-    100022: Right_Front_Lower_Leg
-    100024: Right_Front_Upper_Leg
-    100026: Spine_Back_Body
-    100028: Spine_Front_Body
-    100030: Spine_Lower_Neck
+    100000: Back_Foot
+    100002: Back_Foot 1
+    100004: Back_Leg
+    100006: Back_Leg 1
+    100008: Front_Foot
+    100010: Front_Foot 1
+    100012: Front_Leg
+    100014: Front_Leg 1
+    100016: Llama_Model
+    100018: //RootNode
+    100020: Spine__Upper_Back
+    100022: Spine_Face
+    100024: Spine_Head
+    100026: Spine_Lower_Back
+    100028: Spine_Lower_Neck
+    100030: Spine_Tail
     100032: Spine_Upper_Neck
-    400000: Face
-    400002: Head
-    400004: Horn
-    400006: Left_Back_Lower_Leg
-    400008: Left_Back_Upper_Leg
-    400010: Left_Front_Lower_Leg
-    400012: Left_Front_Upper_Leg
-    400014: Llama
-    400016: //RootNode
-    400018: Right_Back_Lower_Leg
-    400020: Right_Back_Upper_Leg
-    400022: Right_Front_Lower_Leg
-    400024: Right_Front_Upper_Leg
-    400026: Spine_Back_Body
-    400028: Spine_Front_Body
-    400030: Spine_Lower_Neck
+    400000: Back_Foot
+    400002: Back_Foot 1
+    400004: Back_Leg
+    400006: Back_Leg 1
+    400008: Front_Foot
+    400010: Front_Foot 1
+    400012: Front_Leg
+    400014: Front_Leg 1
+    400016: Llama_Model
+    400018: //RootNode
+    400020: Spine__Upper_Back
+    400022: Spine_Face
+    400024: Spine_Head
+    400026: Spine_Lower_Back
+    400028: Spine_Lower_Neck
+    400030: Spine_Tail
     400032: Spine_Upper_Neck
-    2300000: Horn
-    3300000: Horn
-    4300000: Llama
-    4300002: Horn
+    4300000: Llama_Model
     9500000: //RootNode
-    13700000: Llama
+    13700000: Llama_Model
   materials:
     importMaterials: 0
     materialName: 0
@@ -88,7 +85,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0

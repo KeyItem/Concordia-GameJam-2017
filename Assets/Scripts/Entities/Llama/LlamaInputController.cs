@@ -17,10 +17,6 @@ public class LlamaInputController : MonoBehaviour
     public float rightXAxis;
     public float rightYAxis;
 
-    [Header("Input Vectors")]
-    public Vector2 movementVector;
-    public Vector2 headVector;
-
     private void Start()
     {
         playerController = GetComponent<LlamaPlayerController>();
@@ -58,7 +54,7 @@ public class LlamaInputController : MonoBehaviour
         rightXAxis = playerInput.GetAxis("RightHorizontalHeadMovement");
         rightYAxis = playerInput.GetAxis("RightVerticalHeadMovement");
 
-        movementVector.Set(leftXAxis, leftYAxis);
-        headVector.Set(rightXAxis, rightYAxis);
+        playerController.inputMovementVector.Set(leftXAxis, leftYAxis);
+        playerController.inputHeadVector.Set(rightXAxis, rightYAxis);
     }
 }

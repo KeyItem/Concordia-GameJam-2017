@@ -185,7 +185,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.25
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -345,259 +345,259 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Belly
       parentName: EarthGolem(Clone)
-      position: {x: -0.00004426622, y: 2.2365427, z: -0.07116063}
+      position: {x: -0.000011066555, y: 0.5591357, z: -0.017790157}
       rotation: {x: 0.060834087, y: -0.0000009664119, z: -0.0000001799611, w: 0.9981479}
       scale: {x: 1.9685037, y: 1.9685031, z: 1.9685041}
     - name: Bicep_Left
       parentName: EarthGolem(Clone)
-      position: {x: -0.000043795775, y: 0.13240665, z: 0.85426885}
+      position: {x: -0.000010948944, y: 0.033101663, z: 0.21356721}
       rotation: {x: -0.0000005583225, y: 0.99018484, z: -0.13976435, w: -0.000003955533}
       scale: {x: 1.9685042, y: 1.9685043, z: 1.9685035}
     - name: Bicep_Right
       parentName: EarthGolem(Clone)
-      position: {x: 1.0444052, y: 2.1653266, z: 0.051046085}
+      position: {x: 0.2611013, y: 0.54133165, z: 0.012761521}
       rotation: {x: 0.00000018767416, y: 0.9887262, z: 0.14973506, w: 0.0000023179205}
       scale: {x: 1.9685048, y: 1.9685056, z: 1.9685047}
     - name: Chest
       parentName: EarthGolem(Clone)
-      position: {x: -0.00004461937, y: 2.7961028, z: 0.07911139}
+      position: {x: -0.0000111548425, y: 0.6990257, z: 0.019777847}
       rotation: {x: 0.0009992844, y: -0.0000002984996, z: -0.00000047653913, w: 0.9999995}
       scale: {x: 1.9685042, y: 1.9685038, z: 1.968505}
     - name: Elbow1
       parentName: EarthGolem(Clone)
-      position: {x: -0.000043795775, y: 0.13240704, z: 0.85426915}
+      position: {x: -0.000010948944, y: 0.03310176, z: 0.21356729}
       rotation: {x: -0.00000016119469, y: 0.9901848, z: -0.1397646, w: -0.000004952933}
       scale: {x: 1.968504, y: 1.9685045, z: 1.9685037}
     - name: Elbow_Right
       parentName: EarthGolem(Clone)
-      position: {x: 1.0439409, y: 1.8351283, z: -0.06639968}
+      position: {x: 0.26098523, y: 0.45878208, z: -0.01659992}
       rotation: {x: 0.00000018767446, y: 0.9887262, z: 0.14973491, w: 0.0000023179202}
       scale: {x: 1.9685048, y: 1.9685056, z: 1.9685043}
     - name: Fist_Left
       parentName: EarthGolem(Clone)
-      position: {x: -1.04265, y: 0.81903905, z: 0.95169246}
+      position: {x: -0.2606625, y: 0.20475976, z: 0.23792312}
       rotation: {x: -0.00000019841626, y: 0.9901848, z: -0.1397646, w: -0.000005216635}
       scale: {x: 1.9685037, y: 1.9685042, z: 1.9685036}
     - name: Fist_Right
       parentName: EarthGolem(Clone)
-      position: {x: 1.0609665, y: 0.94144505, z: -0.40701804}
+      position: {x: 0.26524162, y: 0.23536126, z: -0.10175451}
       rotation: {x: 0.0000009647224, y: 0.98384935, z: 0.17899852, w: -0.00000009516926}
       scale: {x: 1.9685043, y: 1.9685054, z: 1.9685041}
     - name: Foot_left
       parentName: EarthGolem(Clone)
-      position: {x: -0.5155037, y: 0.122698374, z: 0.0015017736}
+      position: {x: -0.12887593, y: 0.030674594, z: 0.0003754434}
       rotation: {x: 0.010454475, y: -0.021190574, z: 0.01330492, w: 0.9996323}
       scale: {x: 1.9685042, y: 1.9685053, z: 1.9685041}
     - name: Foot_Right
       parentName: EarthGolem(Clone)
-      position: {x: 0.48217976, y: 0.6340877, z: -0.61870915}
+      position: {x: 0.12054494, y: 0.15852192, z: -0.15467729}
       rotation: {x: 0.6197398, y: 0.0000009700868, z: -0.00000031036092, w: 0.7848074}
       scale: {x: 0.39370105, y: 0.39370078, z: 0.393701}
     - name: Forearm_Left
       parentName: EarthGolem(Clone)
-      position: {x: -1.0361068, y: 1.4020675, z: 0.7722505}
+      position: {x: -0.2590267, y: 0.3505169, z: 0.19306262}
       rotation: {x: -0.00000016119469, y: 0.9901848, z: -0.1397646, w: -0.000004952933}
       scale: {x: 1.968504, y: 1.9685036, z: 1.9685045}
     - name: Forearm_Right
       parentName: EarthGolem(Clone)
-      position: {x: 1.0544225, y: 1.5162501, z: -0.2027603}
+      position: {x: 0.26360562, y: 0.37906253, z: -0.050690074}
       rotation: {x: 0.0000018798246, y: 0.982808, z: 0.18463057, w: 0.000004417765}
       scale: {x: 1.9685041, y: 1.9685054, z: 1.9685062}
     - name: Head
       parentName: EarthGolem(Clone)
-      position: {x: -0.0005366436, y: 3.140564, z: 0.77454466}
+      position: {x: -0.0001341609, y: 0.785141, z: 0.19363616}
       rotation: {x: -0.0028514427, y: -0.000000059604403, z: -1.6995923e-10, w: 0.99999595}
       scale: {x: 1.9685043, y: 1.9685036, z: 1.9685048}
     - name: Hip_Left
       parentName: EarthGolem(Clone)
-      position: {x: 0.010170988, y: 0.058644094, z: -0.29815128}
+      position: {x: 0.002542747, y: 0.014661023, z: -0.07453782}
       rotation: {x: -0.00298846, y: 0.9954677, z: 0.09488679, w: 0.0056197657}
       scale: {x: 1.9685042, y: 1.9685031, z: 1.9685048}
     - name: Hip_Right
       parentName: EarthGolem(Clone)
-      position: {x: 0.48921272, y: 1.8820938, z: -0.14503849}
+      position: {x: 0.12230318, y: 0.47052345, z: -0.03625962}
       rotation: {x: -0.00000014296809, y: 0.9970611, z: 0.07661112, w: 0.00000012256533}
       scale: {x: 0.39370096, y: 0.39370105, z: 0.39370078}
     - name: Knee_Left
       parentName: EarthGolem(Clone)
-      position: {x: -0.4963171, y: 0.9685183, z: 0.2819934}
+      position: {x: -0.12407927, y: 0.24212958, z: 0.07049835}
       rotation: {x: 0.09488055, y: -0.005619629, z: 0.0029879108, w: 0.9954683}
       scale: {x: 1.9685042, y: 1.9685051, z: 1.968504}
     - name: Knee_Right
       parentName: EarthGolem(Clone)
-      position: {x: 0.48648065, y: 0.98607856, z: 0.31466243}
+      position: {x: 0.12162016, y: 0.24651964, z: 0.07866561}
       rotation: {x: 0.07661105, y: 0.0000012114214, z: 0.00000020581987, w: 0.9970611}
       scale: {x: 0.39370096, y: 0.39370102, z: 0.39370078}
     - name: MainPelvis
       parentName: EarthGolem(Clone)
-      position: {x: -0.000044159126, y: 1.9222413, z: -0.20588373}
+      position: {x: -0.000011039781, y: 0.48056033, z: -0.05147093}
       rotation: {x: 0.060834087, y: -0.000000966412, z: -0.00000017996109, w: 0.9981479}
       scale: {x: 1.9685037, y: 1.9685032, z: 1.9685043}
     - name: Shin_Left
       parentName: EarthGolem(Clone)
-      position: {x: -0.0037276794, y: -0.000687458, z: -0.29703283}
+      position: {x: -0.00093191984, y: -0.0001718645, z: -0.07425821}
       rotation: {x: -0.0029329685, y: 0.9967676, z: 0.08011136, w: 0.0052943826}
       scale: {x: 1.968504, y: 1.9685047, z: 1.9685042}
     - name: Shin_Right
       parentName: EarthGolem(Clone)
-      position: {x: 0.48902097, y: 0.9702657, z: -0.11274912}
+      position: {x: 0.12225524, y: 0.24256642, z: -0.02818728}
       rotation: {x: 0.00000059506493, y: 0.8766626, z: 0.48110563, w: 0.000000022782974}
       scale: {x: 0.39370096, y: 0.39370078, z: 0.39370093}
     - name: Shoulder_Left
       parentName: EarthGolem(Clone)
-      position: {x: -0.000043795775, y: 0.13240665, z: 0.85426897}
+      position: {x: -0.000010948944, y: 0.033101663, z: 0.21356724}
       rotation: {x: -0.0000006901736, y: 0.99018484, z: -0.13976435, w: -0.000003936922}
       scale: {x: 1.9685042, y: 1.9685043, z: 1.9685035}
     - name: Shoulder_Right
       parentName: EarthGolem(Clone)
-      position: {x: 1.0326241, y: 2.8513408, z: 0.37761027}
+      position: {x: 0.25815603, y: 0.7128352, z: 0.09440257}
       rotation: {x: 0.00000013878233, y: 0.98688805, z: 0.16140637, w: 0.000002451388}
       scale: {x: 1.9685049, y: 1.9685057, z: 1.968505}
     - name: Thigh_Left
       parentName: EarthGolem(Clone)
-      position: {x: -0.48186854, y: 1.3588058, z: 0.13789894}
+      position: {x: -0.120467134, y: 0.33970144, z: 0.034474734}
       rotation: {x: 0.09488055, y: -0.005619629, z: 0.0029879108, w: 0.9954683}
       scale: {x: 1.9685042, y: 1.9685051, z: 1.968504}
     - name: Thigh_Right
       parentName: EarthGolem(Clone)
-      position: {x: 0.47182217, y: 1.3707417, z: 0.15618265}
+      position: {x: 0.11795554, y: 0.34268543, z: 0.03904566}
       rotation: {x: 0.07661105, y: 0.0000012114214, z: 0.00000020581987, w: 0.9970611}
       scale: {x: 0.39370096, y: 0.39370102, z: 0.39370078}
     - name: Spine_Pelvis
       parentName: EarthGolem(Clone)
-      position: {x: 0.000000042012335, y: 2.232618, z: 0.08924165}
+      position: {x: 0.000000010503084, y: 0.5581545, z: 0.022310413}
       rotation: {x: 0.6830125, y: -0.18301198, z: 0.6830129, w: -0.18301342}
       scale: {x: 0.9999999, y: 0.9999997, z: 0.9999999}
     - name: Left_Hip
       parentName: Spine_Pelvis
-      position: {x: -0.013405019, y: 0.020716738, z: 0.005794414}
+      position: {x: -0.0033512549, y: 0.0051791845, z: 0.0014486035}
       rotation: {x: -0.38013572, y: -0.5580618, z: -0.31897178, w: 0.6650721}
       scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
     - name: Left_Thigh
       parentName: Left_Hip
-      position: {x: -0.50572175, y: 0.005530137, z: 0.19492705}
+      position: {x: -0.12643044, y: 0.0013825343, z: 0.048731763}
       rotation: {x: 0.38044885, y: -0.5790801, z: 0.4666088, w: -0.5497283}
       scale: {x: 0.9999999, y: 1, z: 0.9999998}
     - name: Left_Shin
       parentName: Left_Thigh
-      position: {x: -1.0647513, y: 0, z: -0.000000079726}
+      position: {x: -0.26618782, y: 0, z: -0.0000000199315}
       rotation: {x: -0.01876503, y: -0.036872264, z: 0.3393812, w: 0.93973863}
       scale: {x: 1, y: 1, z: 1}
     - name: Left_Foot
       parentName: Left_Shin
-      position: {x: -0.99299014, y: -0.00000042390823, z: 0.00000021061625}
+      position: {x: -0.24824753, y: -0.00000010597706, z: 0.000000052654062}
       rotation: {x: -0.013541358, y: 0.05915664, z: -0.82508993, w: 0.56173277}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: Left_Toe
       parentName: Left_Foot
-      position: {x: -0.5026772, y: 0.0000001332283, z: -3.465175e-14}
+      position: {x: -0.1256693, y: 0.000000033307074, z: -8.662937e-15}
       rotation: {x: 0, y: -4.440892e-16, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Right_Hip
       parentName: Spine_Pelvis
-      position: {x: -0.013405019, y: 0.020716738, z: 0.005794414}
+      position: {x: -0.0033512549, y: 0.0051791845, z: 0.0014486035}
       rotation: {x: 0.372618, y: 0.5828583, z: -0.299108, w: 0.6572415}
       scale: {x: 1, y: 1.0000002, z: 1}
     - name: Right_Thigh
       parentName: Right_Hip
-      position: {x: -0.47803834, y: 0.00079215126, z: -0.19492725}
+      position: {x: -0.119509585, y: 0.00019803781, z: -0.04873181}
       rotation: {x: -0.4093904, y: 0.5749856, z: 0.4667044, w: -0.532896}
       scale: {x: 1.0000004, y: 1.0000001, z: 0.9999999}
     - name: Right_Shin
       parentName: Right_Thigh
-      position: {x: -1.0647513, y: 0, z: -0.000000079726}
+      position: {x: -0.26618782, y: 0, z: -0.0000000199315}
       rotation: {x: 0.009011001, y: 0.0104967365, z: 0.3429619, w: 0.9392474}
       scale: {x: 1, y: 1, z: 1}
     - name: Right_Foot
       parentName: Right_Shin
-      position: {x: -0.99299014, y: -0.00000042390823, z: 0.00000021061625}
+      position: {x: -0.24824753, y: -0.00000010597706, z: 0.000000052654062}
       rotation: {x: 0.013902208, y: -0.0218558, z: -0.83628255, w: 0.5476865}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: Right_Toe
       parentName: Right_Foot
-      position: {x: -0.5026772, y: 0.0000001332283, z: -3.465175e-14}
+      position: {x: -0.1256693, y: 0.000000033307074, z: -8.662937e-15}
       rotation: {x: 0, y: -4.440892e-16, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Spine_Bot
       parentName: Spine_Pelvis
-      position: {x: -0.40423793, y: -0.00000009689331, z: -0.000000019198373}
+      position: {x: -0.10105948, y: -0.000000024223327, z: -0.000000004799593}
       rotation: {x: -0.000000059604645, y: 0.000000037252903, z: 0.69788206, w: 0.71621275}
       scale: {x: 1, y: 1, z: 1}
     - name: Spine_Chest
       parentName: Spine_Bot
-      position: {x: -0.2768079, y: 0.00000009689331, z: -0.000000022810477}
+      position: {x: -0.069201976, y: 0.000000024223327, z: -0.0000000057026193}
       rotation: {x: 0.000000059604645, y: -0.00000001490116, z: 0.000000022351744,
         w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Left_Shoulder
       parentName: Spine_Chest
-      position: {x: -0.86243206, y: -0.00000019378662, z: 0.00000019378662}
+      position: {x: -0.21560802, y: -0.000000048446655, z: 0.000000048446655}
       rotation: {x: -0.000000011414951, y: -0.7660444, z: -0.000000009578283, w: 0.6427877}
       scale: {x: 1.0000001, y: 0.99999976, z: 0.9999999}
     - name: Left_Shoulder_Tip
       parentName: Left_Shoulder
-      position: {x: -1.0507141, y: 0.00000014533997, z: 0.00000019378662}
+      position: {x: -0.26267853, y: 0.000000036334992, z: 0.000000048446655}
       rotation: {x: 0.00000009103242, y: -0, z: -0, w: 1}
       scale: {x: 1.0000002, y: 1.0000004, z: 1}
     - name: Left_Bicep
       parentName: Left_Shoulder
-      position: {x: -1.0641629, y: 0.0028742915, z: -0.019959828}
+      position: {x: -0.2660407, y: 0.0007185729, z: -0.004989957}
       rotation: {x: 0.9931015, y: 0.005826155, z: -0.08112157, w: 0.0844677}
       scale: {x: 1.0000004, y: 1.0000005, z: 1.0000004}
     - name: Left_Forearm
       parentName: Left_Bicep
-      position: {x: -1.1713378, y: -0.000000024223327, z: -0.00000000785385}
+      position: {x: -0.29283446, y: -0.000000006055832, z: -0.0000000019634625}
       rotation: {x: -0.0020135867, y: -0.0046236273, z: -0.023066083, w: 0.9997212}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: Left_Fist
       parentName: Left_Forearm
-      position: {x: -0.70935047, y: -0.000000048446655, z: 0.0000000016137117}
+      position: {x: -0.17733762, y: -0.000000012111664, z: 4.0342793e-10}
       rotation: {x: 1.7294655e-11, y: 1.3150909e-13, z: 0.0076038106, w: 0.9999711}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: LeftFistTip
       parentName: Left_Fist
-      position: {x: -0.36946693, y: -0.000000072669984, z: 8.4040863e-10}
+      position: {x: -0.09236673, y: -0.000000018167496, z: 2.1010216e-10}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Right_Shoulder
       parentName: Spine_Chest
-      position: {x: -0.86243147, y: -0.000000048446655, z: -0.00000009689331}
+      position: {x: -0.21560787, y: -0.000000012111664, z: -0.000000024223327}
       rotation: {x: -0.21524023, y: 0.73027825, z: 0.26579943, w: 0.5913679}
       scale: {x: 1.0000006, y: 1.0000006, z: 1.0000012}
     - name: Right_Shoulder_Tip
       parentName: Right_Shoulder
-      position: {x: -1.050714, y: -0.00000034064055, z: -0.00000058492543}
+      position: {x: -0.2626785, y: -0.00000008516014, z: -0.00000014623136}
       rotation: {x: 0.00000005017375, y: -0.00000015542419, z: -0.00000023841858,
         w: 1}
       scale: {x: 0.99999994, y: 0.9999999, z: 0.99999976}
     - name: Right_Bicep
       parentName: Right_Shoulder
-      position: {x: -1.0641633, y: 0.002873904, z: 0.01995789}
+      position: {x: -0.26604083, y: 0.000718476, z: 0.0049894727}
       rotation: {x: 0.92449915, y: -0.029553976, z: 0.09629663, w: -0.36763415}
       scale: {x: 1.0000001, y: 0.99999946, z: 0.99999976}
     - name: Right_Forearm
       parentName: Right_Bicep
-      position: {x: -1.171338, y: -0.00000058135987, z: -0.0000009689331}
+      position: {x: -0.2928345, y: -0.00000014533997, z: -0.00000024223328}
       rotation: {x: 0.0025885997, y: 0.00472725, z: -0.018610291, w: 0.99981236}
       scale: {x: 0.9999998, y: 1.0000001, z: 1}
     - name: Right_Fist
       parentName: Right_Forearm
-      position: {x: -0.7093509, y: 0.000000048446655, z: -0.00000058135987}
+      position: {x: -0.17733772, y: 0.000000012111664, z: -0.00000014533997}
       rotation: {x: 0.0000046813752, y: 0.0000002740217, z: 0.007603572, w: 0.9999711}
       scale: {x: 0.99999994, y: 1.0000004, z: 1}
     - name: Right_FistTip
       parentName: Right_Fist
-      position: {x: -0.3694667, y: -0.00000012111664, z: -0.00000019378662}
+      position: {x: -0.09236667, y: -0.00000003027916, z: -0.000000048446655}
       rotation: {x: 0, y: -0.00000012564983, z: -0, w: 1}
       scale: {x: 0.9999998, y: 0.9999997, z: 1}
     - name: Spine_Head
       parentName: Spine_Chest
-      position: {x: -0.8624367, y: -0.00000058135987, z: 0.00000002814013}
+      position: {x: -0.21560918, y: -0.00000014533997, z: 0.0000000070350326}
       rotation: {x: 0.00000000506439, y: 0.0000000023615634, z: 0.42261824, w: 0.9063078}
       scale: {x: 0.99999976, y: 0.99999976, z: 1}
     - name: FaceTip
       parentName: Spine_Head
-      position: {x: -0.522509, y: 0, z: 0.000000049839286}
+      position: {x: -0.13062724, y: 0, z: 0.000000012459822}
       rotation: {x: 0, y: 0.010695313, z: -0, w: 0.99994284}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
