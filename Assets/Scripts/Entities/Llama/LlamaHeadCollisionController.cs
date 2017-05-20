@@ -4,11 +4,11 @@ using UnityEngine;
 public class LlamaHeadCollisionController : MonoBehaviour
 {
     [Header("Collision Interactions Values")]
-    public LayerMask collisionLayers;
+    private GameObject hitObject;
 
     private float impulseApplied;
 
-    private GameObject hitObject;
+    public float baseForce = 5;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -18,9 +18,11 @@ public class LlamaHeadCollisionController : MonoBehaviour
 
         if (hitObject.GetComponent<Rigidbody>())
         {
+            Vector3 interceptVec = (hitObject.transform.position - transform.position).normalized;
 
+            hitObject.GetComponent<Rigidbody>().AddForce(interceptVec * baseForce, ForceMode.Impulse);
 
             Debug.Log("Hit " + collision.collider.gameObject.name + " with " + impulseApplied + " of Force");
-        }       
+        }
     }
 }

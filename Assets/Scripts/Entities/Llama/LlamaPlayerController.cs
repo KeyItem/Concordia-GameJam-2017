@@ -30,7 +30,7 @@ public class LlamaPlayerController : MonoBehaviour
     private Vector3 turningVector;
 
     [Header("Llama Neck Movement Values")]
-    public GameObject[] neckPieces;
+    public GameObject hornCollider;
     [Space(10)]
     public float baseNeckControlSpeed;
 
