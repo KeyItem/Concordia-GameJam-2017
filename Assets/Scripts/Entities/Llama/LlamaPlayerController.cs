@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class LlamaPlayerController : MonoBehaviour
 {
+    [Header("Player Attributes")]
+    public PlayerColor teamColor;
+
     [Header("Llama Body Parts")]
     public Rigidbody mainBody;
     [Space(10)]

@@ -16,13 +16,16 @@ public class LlamaHeadCollisionController : MonoBehaviour
 
         impulseApplied = collision.relativeVelocity.magnitude;
 
-        if (hitObject.GetComponent<Rigidbody>())
+        if (hitObject.CompareTag("Player") || hitObject.CompareTag("Object"))
         {
-            Vector3 interceptVec = (hitObject.transform.position - transform.position).normalized;
+            if (hitObject.GetComponent<Rigidbody>())
+            {
+                Vector3 interceptVec = (hitObject.transform.position - transform.position).normalized;
 
-            hitObject.GetComponent<Rigidbody>().AddForce(interceptVec * baseForce, ForceMode.Impulse);
+                hitObject.GetComponent<Rigidbody>().AddForce(interceptVec * baseForce, ForceMode.Impulse);
 
-            Debug.Log("Hit " + collision.collider.gameObject.name + " with " + impulseApplied + " of Force");
-        }
+                Debug.Log("Hit " + collision.collider.gameObject.name + " with " + impulseApplied + " of Force");
+            }
+        }     
     }
 }

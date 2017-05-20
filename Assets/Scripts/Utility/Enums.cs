@@ -6,3 +6,11 @@
     PLAYER4,
     NONE
 }
+
+public enum PlayerColor
+{
+    RED,
+    BLUE,
+    GREEN,
+    YELLOW
+}
