@@ -300,6 +300,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1960113749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1960113747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879a4f8b8a8ce40449f67a8ddde142a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterGameObject: {fileID: 0}
+  characterName: 
+  characterID: 0
+  characterVariantNumber: 0
+  characterIncomingKnockbackModifier: 0
+  characterOutgoingKnockbackModifier: 0
+  victoryCount: 0
+  knockoutCount: 0
+  spronginess: 0
+  characterPortrait: {fileID: 0}
+  victoryBleat: {fileID: 0}
 --- !u!136 &1960113751
 CapsuleCollider:
   m_ObjectHideFlags: 0
