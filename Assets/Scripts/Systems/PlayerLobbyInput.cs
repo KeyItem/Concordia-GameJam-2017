@@ -6,6 +6,7 @@ using Rewired;
 
 public class PlayerLobbyInput : MonoBehaviour {
 
+	//public string groupID;
 	private Player playerInput;
 	public PlayerNumber playerNumber;
     public PlayerCharacter currentCharacter;
@@ -13,6 +14,8 @@ public class PlayerLobbyInput : MonoBehaviour {
 
     public Horn currentHorn;
     public int hornIndex = 0;
+
+	public Color basePanel;
 
     public bool isAssigned = false;
 	public bool hasPickedCharacter = false;
@@ -29,14 +32,19 @@ public class PlayerLobbyInput : MonoBehaviour {
 
     public GameObject onAcceptUI;
     public GameObject onNoAcceptUI;
+	public GameObject onHornUI;
 
     public PlayerCharacter[] characterList;
     public Horn[] hornList;
+
+	float xAxis;
+	bool canChangeAxis = true;
 
 
     // Use this for initialization
     void Start () {
 		Initialize ();
+		basePanel = gameObject.GetComponent<Image> ().color;
 
     }
 	
@@ -50,74 +58,106 @@ public class PlayerLobbyInput : MonoBehaviour {
 	//	isAssigned = true;
 	}
 	private void ReadInput(){
-        if (playerInput.GetButtonDown("Accept"))
-        {
-            if (isAssigned == false)
-            {
-                onNoAcceptUI.SetActive(false);
-                onAcceptUI.SetActive(true);
-                isAssigned = true;
-                ShowCharacter();
-                return;
-            }
-            if (hasPickedCharacter == false && isAssigned == true)
-            {
-                SelectCharacter();
-                Debug.Log("PickHornTime");
-                ShowHorn();
-            }
-            if (hasPickedHorn == false && hasPickedCharacter == true)
-            {
-                hasPickedHorn = true;
-            }
-        }
-		if (playerInput.GetButtonDown ("Decline")) {
-            if (hasConfirmed)
-            {
-                hasConfirmed = false;
-                return;
-            }
-            if (hasPickedHorn)
-            {
-                hasPickedHorn = false;
-                return;
-            }
-            if (hasPickedCharacter)
-            {
-                DeselectCharacter();
-                return;
-            }
-            if (isAssigned)
-            {
-                onNoAcceptUI.SetActive(true);
-                onAcceptUI.SetActive(false);
-                isAssigned = false;
-                return;
-            }
-        }
-        if (playerInput.GetButtonDown("Start"))
-        {
-            if (GameObject.Find("CharacterSelectionMaster").GetComponent<CharacterSelection>().readyToPlay)
-            {
-                GameObject.Find("CharacterSelectionMaster").GetComponent<CharacterSelection>().StartGame();
-            }
-            else {
-                return;
-            }
-        }
-        //if (playerInput.GetAxis ("MenuAxis")) {
 
-        //}
+		xAxis = playerInput.GetAxis ("MenuAxis");
+
+
+		if (playerInput.GetButtonDown ("Accept")) {
+			if (isAssigned == false) {
+				onNoAcceptUI.SetActive (false);
+				onAcceptUI.SetActive (true);
+				isAssigned = true;
+				ShowCharacter ();
+				return;
+			}
+			if (hasPickedCharacter == false && isAssigned == true) {
+				SelectCharacter ();
+				onAcceptUI.SetActive (false);
+				onHornUI.SetActive (true);
+				Debug.Log ("PickHornTime");
+				ShowHorn ();
+				return;
+			}
+			if (hasPickedHorn == false && hasPickedCharacter == true) {
+				SelectHorn ();
+				gameObject.GetComponent<Image> ().color = Colors.LightGreen;
+				return;
+			}
+		}
+		if (playerInput.GetButtonDown ("Decline")) {
+			if (hasPickedHorn) {
+				gameObject.GetComponent<Image> ().color = basePanel;
+				hasConfirmed = false;
+				hasPickedHorn = false;
+				return;
+			}
+			if (hasPickedCharacter) {
+				DeselectCharacter ();
+				return;
+			}
+			if (isAssigned) {
+				onNoAcceptUI.SetActive (true);
+				onAcceptUI.SetActive (false);
+				isAssigned = false;
+
+
+				return;
+			}
+		}
+		if (playerInput.GetButtonDown ("Start")) {
+			if (GameObject.Find ("CharacterSelectionMaster").GetComponent<CharacterSelection> ().readyToPlay) {
+				GameObject.Find ("CharacterSelectionMaster").GetComponent<CharacterSelection> ().StartGame ();
+			} else {
+				return;
+			}
+		}
+		if (canChangeAxis) {
+			if (xAxis > 0.5f) {
+				canChangeAxis = false;
+
+
+				if (hasPickedCharacter == false && isAssigned == true) {
+					NextCharacter ();
+
+				}
+				if (hasPickedHorn == false && hasPickedCharacter == true) {
+					NextHorn ();
+				}
+				StartCoroutine ("ResetAxisInput");
+			}
+
+			if (xAxis < -0.5f) {
+				canChangeAxis = false;
+
+				if (hasPickedCharacter == false && isAssigned == true) {
+					PreviousCharacter ();
+
+				}
+				if (hasPickedHorn == false && hasPickedCharacter == true) {
+					PreviousHorn ();
+
+				}
+				StartCoroutine ("ResetAxisInput");
+			}
+
+		}
     }
 
 	private void Initialize(){
 
         characterList = GameObject.Find("CharacterSelectionMaster").GetComponent<CharacterSelection>().characterList;
+
         hornList = GameObject.Find("CharacterSelectionMaster").GetComponent<CharacterSelection>().hornList;
         onAcceptUI = gameObject.transform.GetChild(1).gameObject;
         onNoAcceptUI = gameObject.transform.GetChild(2).gameObject;
-        playerPortrait = gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).GetComponent<Image>().sprite;
-        playerName = gameObject.transform.GetChild(1).gameObject.transform.GetChild(3).GetComponent<Text>();
+		onHornUI = gameObject.transform.GetChild(3).gameObject;
+
+		playerPortrait = gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).GetComponent<Image>().sprite;
+		playerName = gameObject.transform.GetChild(1).gameObject.transform.GetChild(3).GetComponent<Text>();
+
+
+		hornPortrait = gameObject.transform.GetChild(3).gameObject.transform.GetChild(0).GetComponent<Image>().sprite;
+		hornName = gameObject.transform.GetChild(3).gameObject.transform.GetChild(3).GetComponent<Text>();
 
         switch (playerNumber) {
 		    case PlayerNumber.PLAYER1:
@@ -140,11 +180,13 @@ public class PlayerLobbyInput : MonoBehaviour {
 
     public void NextCharacter()
     {
-        if (++characterIndex < characterList.Length)
+
+		if ((characterIndex + 1) < characterList.Length)
         {
-            characterIndex = 0;
+			characterIndex++;
+			Debug.Log (characterIndex);
         } else {
-            characterIndex++;
+			characterIndex = 0;
         }
 
         ShowCharacter();
@@ -152,13 +194,14 @@ public class PlayerLobbyInput : MonoBehaviour {
 
     public void PreviousCharacter()
     {
-        if (--characterIndex < 0)
+		Debug.Log ("tryingPreviousCharacter");
+		if ((characterIndex - 1) < 0)
         {
-            characterIndex = characterList.Length;
+			characterIndex = (characterList.Length - 1);
         }
         else
         { 
-            characterIndex--;
+			characterIndex--;
         }
         ShowCharacter();
     }
@@ -180,19 +223,20 @@ public class PlayerLobbyInput : MonoBehaviour {
     public void ShowHorn()
     {
          currentHorn = hornList[hornIndex];
+
          hornName.text = currentHorn.hornName;
          hornPortrait = currentHorn.hornPortrait;
-         gameObject.transform.GetChild(2).gameObject.transform.GetChild(0).GetComponent<Image>().sprite = hornPortrait;
+         gameObject.transform.GetChild(3).gameObject.transform.GetChild(0).GetComponent<Image>().sprite = hornPortrait;
     }
     public void NextHorn()
     {
-        if (++hornIndex < hornList.Length)
+		if ((hornIndex + 1) < hornList.Length)
         {
-            hornIndex = 0;
+			hornIndex++;
         }
         else
         {
-            characterIndex++;
+			hornIndex = 0;
         }
 
         ShowHorn();
@@ -200,24 +244,31 @@ public class PlayerLobbyInput : MonoBehaviour {
 
     public void PreviousHorn()
     {
-        if (--hornIndex < 0)
+		if ((hornIndex - 1) < 0)
         {
-            hornIndex = hornList.Length;
+			hornIndex = (hornList.Length - 1);
+            
         }
         else
         {
-            hornIndex--;
+			hornIndex--;
         }
         ShowHorn();
     }
     public void SelectHorn()
     {
         hasPickedHorn = true;
+		hasConfirmed = true;
     }
     public void DeselectHorn()
     {
         hasPickedHorn = false;
     }
+	IEnumerator ResetAxisInput(){
+		Debug.Log ("Running Wait for Seconds");
+		yield return new WaitForSeconds(.5f);
+		canChangeAxis = true;
+	}
 
 }
 

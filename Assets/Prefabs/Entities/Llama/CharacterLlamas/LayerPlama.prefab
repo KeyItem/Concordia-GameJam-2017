@@ -810,6 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamColor: 0
+  playerRespawnTime: 2
   mainBody: {fileID: 54922866251478722}
   baseOfNeck: {fileID: 54444929188419200}
   baseMovementSpeed: 20
@@ -817,6 +818,7 @@ MonoBehaviour:
   moveSmoothTime: 0.5
   turningSmoothTime: 0.05
   hornCollider: {fileID: 0}
+  listOfJoints: []
   baseNeckControlSpeed: 250
   isMovingHead: 0
   jumpForce: 10
@@ -840,10 +842,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 0}
-  playerVictoryCount: 0
-  playerKnockoutCount: 0
   characterGameObject: {fileID: 1467552510609222}
-  characterName: LayerPlama
+  characterName: FuzzButt
   characterID: 0
   characterVariantNumber: 0
   characterIncomingKnockbackModifier: 0

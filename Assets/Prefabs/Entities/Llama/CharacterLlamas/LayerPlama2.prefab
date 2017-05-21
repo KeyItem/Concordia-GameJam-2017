@@ -810,6 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamColor: 0
+  playerRespawnTime: 2
   mainBody: {fileID: 54799288580375286}
   baseOfNeck: {fileID: 54476260067704380}
   baseMovementSpeed: 20
@@ -817,6 +818,7 @@ MonoBehaviour:
   moveSmoothTime: 0.5
   turningSmoothTime: 0.05
   hornCollider: {fileID: 0}
+  listOfJoints: []
   baseNeckControlSpeed: 250
   isMovingHead: 0
   jumpForce: 10
@@ -856,17 +858,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlayer: {fileID: 0}
-  playerVictoryCount: 0
-  playerKnockoutCount: 0
   characterGameObject: {fileID: 1005517361008382}
-  characterName: FlayerPlama
+  characterName: FlayingPlama
   characterID: 1
   characterVariantNumber: 0
   characterIncomingKnockbackModifier: 0
   characterOutgoingKnockbackModifier: 0
   spronginess: 1
   playerHorn: {fileID: 0}
-  characterPortrait: {fileID: 21300000, guid: b6d2560cd956748a3b44a83b821263b5, type: 3}
+  characterPortrait: {fileID: 21300000, guid: d1f774c22067d6a47b52fb86164391e8, type: 3}
   victoryBleat: {fileID: 0}
   painBleat: {fileID: 0}
   smackBleat: {fileID: 0}

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerCharacter : MonoBehaviour {
 
+
+
 	[Space(10)]
 	[Header("Current Player Information")]
 	public PlayerClass currentPlayer;

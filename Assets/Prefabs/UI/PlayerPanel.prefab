@@ -831,6 +831,7 @@ MonoBehaviour:
   characterIndex: 0
   currentHorn: {fileID: 0}
   hornIndex: 0
+  basePanel: {r: 0, g: 0, b: 0, a: 0}
   isAssigned: 0
   hasPickedCharacter: 0
   hasPickedHorn: 0
@@ -841,6 +842,7 @@ MonoBehaviour:
   hornName: {fileID: 0}
   onAcceptUI: {fileID: 0}
   onNoAcceptUI: {fileID: 0}
+  onHornUI: {fileID: 0}
   characterList: []
   hornList: []
 --- !u!114 &114746003579752886
@@ -909,7 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

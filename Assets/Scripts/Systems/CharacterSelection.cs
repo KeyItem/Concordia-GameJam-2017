@@ -91,10 +91,7 @@ public class CharacterSelection : MonoBehaviour {
 					return;
 				} 
 			}
-//			if ((i+1) == playersInGameList.Length) {
-//				Debug.Log("Made it through the last step")
-//				readyToPlay = true;
-//			}
+
 			if (readyToPlay) {
 				pressStartText.enabled = true;
 			} else {
