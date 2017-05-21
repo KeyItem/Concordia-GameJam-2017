@@ -54,7 +54,7 @@ public class PlayerStock : MonoBehaviour {
 	}
 	public void ShowPortrait(){
 		Debug.Log ((int)thisPlayerNumber);
-		playerSprite = lobbyVariablesForStock.playersToStartGameList [(int)thisPlayerNumber].characterPortrait;
+		playerSprite = lobbyVariablesForStock.hornToStartGameList [(int)thisPlayerNumber].hornPortrait;
 	}
 
 }
