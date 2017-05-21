@@ -165,7 +165,33 @@ public class LlamaPlayerController : MonoBehaviour
         {
             if (isGrounded)
             {
+                currentVelocity = mainBody.velocity.magnitude;
+
                 targetSpeed = baseMovementSpeed * inputMovementVector.magnitude;
+
+                movingVector = transform.forward * targetSpeed;
+
+                if (currentVelocity < maxMovementSpeed)
+                {
+                    mainBody.AddForce(movingVector * Time.fixedDeltaTime, ForceMode.Impulse);
+                }
+                else
+                {
+                    mainBody.velocity = (transform.forward * maxMovementSpeed);
+                }
+            }          
+        }
+
+        /*
+        if (inputMovementVector != Vector2.zero)
+        {
+            if (isGrounded)
+            {
+                currentVelocity = mainBody.velocity.magnitude;
+
+                targetSpeed = baseMovementSpeed * inputMovementVector.magnitude;
+
+                currentSpeed = currentVelocity;
 
                 currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref moveSmoothVelocity, moveSmoothTime);
 
@@ -174,11 +200,10 @@ public class LlamaPlayerController : MonoBehaviour
                 if (currentVelocity < maxMovementSpeed)
                 {
                     mainBody.AddForce(movingVector * Time.fixedDeltaTime, ForceMode.Impulse);
-                }           
+                }     
             }          
         }
-
-        currentVelocity = Mathf.Round(mainBody.velocity.magnitude);
+        */
     }
 
     private void ManageBodyRotation()
@@ -195,14 +220,18 @@ public class LlamaPlayerController : MonoBehaviour
     {
         if (headVector != Vector3.zero)
         {
-            baseOfNeck.AddForce(headVector * baseNeckControlSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
-
+            hornController.isHornActive = true;
+            
             isMovingHead = true;
 
-            hornController.EnableTrail();
+            baseOfNeck.AddForce(headVector * baseNeckControlSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
+
+            hornController.EnableTrail(); 
         }
         else
         {
+            hornController.isHornActive = false;
+
             isMovingHead = false;
 
             hornController.DisableTrail();

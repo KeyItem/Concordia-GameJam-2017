@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 65408779062734588}
   m_Layer: 13
   m_Name: Spine_Face
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -750,8 +750,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.81, y: 1.07, z: 2}
-  m_Center: {x: 0, y: 0.49, z: 0}
+  m_Size: {x: 0.81, y: 2.5, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!65 &65930565696578060
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -915,7 +915,7 @@ MonoBehaviour:
   playerRespawnTime: 2
   mainBody: {fileID: 54825123441184034}
   baseOfNeck: {fileID: 54200336066074654}
-  baseMovementSpeed: 20
+  baseMovementSpeed: 30
   maxMovementSpeed: 10
   moveSmoothTime: 0.1
   turningSmoothTime: 0.2

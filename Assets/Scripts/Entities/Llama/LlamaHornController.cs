@@ -10,6 +10,8 @@ public class LlamaHornController : MonoBehaviour
 
     public float baseForce = 5;
 
+    public bool isHornActive = false;
+
     [Header("Trail Renderer Attributes")]
     private TrailRenderer trailRenderer;
 
@@ -24,23 +26,26 @@ public class LlamaHornController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        hitObject = collision.collider.gameObject;
-
-        impulseApplied = collision.relativeVelocity.magnitude;
-
-        if (hitObject.CompareTag("Player") || hitObject.CompareTag("Object"))
+        if (isHornActive)
         {
-            if (hitObject.GetComponent<Rigidbody>())
+            hitObject = collision.collider.gameObject;
+
+            impulseApplied = collision.relativeVelocity.magnitude;
+
+            if (hitObject.CompareTag("Player") || hitObject.CompareTag("Object"))
             {
-                Vector3 interceptVec = (hitObject.transform.position - transform.position).normalized;
+                if (hitObject.GetComponent<Rigidbody>())
+                {
+                    Vector3 interceptVec = (hitObject.transform.position - transform.position).normalized;
 
-                interceptVec.y = 0;
+                    interceptVec.y = 0;
 
-                hitObject.GetComponent<Rigidbody>().AddForce(interceptVec * baseForce, ForceMode.Impulse);
+                    hitObject.GetComponent<Rigidbody>().AddForce(interceptVec * baseForce, ForceMode.Impulse);
 
-                Debug.Log(gameObject.name + " Hit " + collision.collider.gameObject.name + " with " + baseForce + " of Force");
+                    Debug.Log(gameObject.name + " Hit " + collision.collider.gameObject.name + " with " + baseForce + " of Force");
+                }
             }
-        }     
+        }
     }
 
     public void EnableTrail()
