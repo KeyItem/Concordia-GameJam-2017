@@ -94,5 +94,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hornGameObject: {fileID: 0}
-  hornName: Traffic Cone
-  hornPortrait: {fileID: 0}
+  hornName: Traffic Cone Horn
+  hornPortrait: {fileID: 21300000, guid: e47aee60387c3458794cdb99fc026117, type: 3}
