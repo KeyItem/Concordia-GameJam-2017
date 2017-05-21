@@ -6,7 +6,8 @@ using Rewired;
 
 public class CharacterSelection : MonoBehaviour {
 
-	public PlayerCharacter[] characterList;
+    public PlayerCharacter[] characterList;
+    public Horn[] hornList;
 	//player list
 	public PlayerLobbyInput[] playersInGameList; //update this list to match the number of controllers plugged in
 	public GameObject[] playerPanelList;
@@ -23,25 +24,20 @@ public class CharacterSelection : MonoBehaviour {
 	void Update () {
 		EnableStartMatch ();
 	}
-		
-	public void NextCharacter(GameObject panelToMove){
-		// 
-	}
-	public void PreviousCharacter(){
-	}
-	public void SelectCharacter(){
-		
-	}
-	public void DeselectCharacter(){
-	}
+
 	public void SaveCharacterSelection(){
 	
 	}
 
+    public void StartGame() {
+        SaveCharacterSelection();
+        //Load Scene Script
+        Debug.Log("Make it load the scene");
+    }
 	public void EnableStartMatch(){
 			
 			for (int i = 0; i < playersInGameList.Length; i++) {
-				Debug.Log ("I ran the damn loop");
+				//Debug.Log ("I ran the damn loop");
 
 				//If they selected a panel "isAssigned is true"
 				if (playersInGameList [i].isAssigned) {
@@ -49,7 +45,7 @@ public class CharacterSelection : MonoBehaviour {
 					//If they did all of the steps (are confirmed) this is true
 					if (playersInGameList [i].hasConfirmed == true) {
 						readyToPlay = true;
-						Debug.Log (" I got it right ");
+						//Debug.Log (" I got it right ");
 
 
 					} else 
@@ -57,7 +53,7 @@ public class CharacterSelection : MonoBehaviour {
 						{
 						readyToPlay = false;
 						pressStartText.enabled = false;
-						Debug.Log (" Someone wasn't ready ");
+						//Debug.Log (" Someone wasn't ready ");
 
 						return;
 					} 
@@ -70,10 +66,5 @@ public class CharacterSelection : MonoBehaviour {
 		}
 	}
 
-	public Sprite LoadSprite(PlayerCharacter characterSpriteToLoad){
-		return characterSpriteToLoad.characterPortrait;
-	}
-	public string LoadName(PlayerCharacter playerNameToLoad){
-		return playerNameToLoad.characterName;
-	}
+
 }
