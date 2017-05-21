@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class LlamaPlayerController : MonoBehaviour
 {
+    private PlayerStock playerStock;
+
     [Header("Player Attributes")]
     public PlayerColor teamColor;
+
+    public float playerRespawnTime = 2f;
 
     [Header("Llama Body Parts")]
     public Rigidbody mainBody;
@@ -141,7 +145,11 @@ public class LlamaPlayerController : MonoBehaviour
                 break;
         }
 
+        mainBody = GetComponent<Rigidbody>();
+
         hornController = hornCollider.GetComponent<LlamaHornController>();
+
+        playerStock = GetComponent<PlayerStock>();
     }
 
     private void ReadInput()
@@ -190,10 +198,14 @@ public class LlamaPlayerController : MonoBehaviour
             baseOfNeck.AddForce(headVector * baseNeckControlSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
 
             isMovingHead = true;
+
+            hornController.EnableTrail();
         }
         else
         {
             isMovingHead = false;
+
+            hornController.DisableTrail();
         }
     }
 
@@ -206,6 +218,25 @@ public class LlamaPlayerController : MonoBehaviour
         else
         {
             isGrounded = false;
+        }
+    }
+
+    public void Die()
+    {
+        StartCoroutine(RespawnAfterTime(playerRespawnTime));
+    }
+
+    private IEnumerator RespawnAfterTime(float respawnTime)
+    {
+        yield return new WaitForSeconds(respawnTime);
+
+        transform.position = Vector3.zero + Vector3.up;
+
+        playerStock.RemoveStock();
+
+        if (!playerStock.IsPlayerAlive())
+        {
+            Debug.Log("Game Over for " + gameObject.name);
         }
     }
 }

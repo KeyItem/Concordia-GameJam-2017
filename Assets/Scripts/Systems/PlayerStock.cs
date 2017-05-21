@@ -20,11 +20,11 @@ public class PlayerStock : MonoBehaviour {
 		
 	}
 
-	void AddStock(){
+	public void AddStock(){
 		currentStock++;
 		Debug.Log (thisPlayer.name + " has" + currentStock + " lives left");
 	}
-	void RemoveStock(){
+	public void RemoveStock(){
 		currentStock--;
 		Debug.Log (thisPlayer.name + " has" + currentStock + " lives left");
 	}
