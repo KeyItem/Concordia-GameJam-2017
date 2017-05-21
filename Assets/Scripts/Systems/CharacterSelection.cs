@@ -60,11 +60,13 @@ public class CharacterSelection : MonoBehaviour {
 				playersToStartGameList [i] = null;
 				hornToStartGameList [i] = null;
 			}
-		} 
+		}
+		GameObject.Find ("VariableManager").GetComponent<LobbyVariables> ().SaveInformationForGame;
 	}
 
     public void StartGame() {
         SaveCharacterSelection();
+
         //Load Scene Script
         Debug.Log("Make it load the scene");
     }
