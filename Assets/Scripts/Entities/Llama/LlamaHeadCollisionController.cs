@@ -24,7 +24,7 @@ public class LlamaHeadCollisionController : MonoBehaviour
 
                 hitObject.GetComponent<Rigidbody>().AddForce(interceptVec * baseForce, ForceMode.Impulse);
 
-                Debug.Log("Hit " + collision.collider.gameObject.name + " with " + impulseApplied + " of Force");
+                Debug.Log(gameObject.name + " Hit " + collision.collider.gameObject.name + " with " + baseForce + " of Force");
             }
         }     
     }

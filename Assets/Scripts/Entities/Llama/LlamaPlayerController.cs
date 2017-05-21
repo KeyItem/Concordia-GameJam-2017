@@ -137,14 +137,4 @@ public class LlamaPlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
-
-    public void Jump()
-    {
-        if (isGrounded)
-        {
-            mainBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-
-            isGrounded = false;
-        }
-    }
 }

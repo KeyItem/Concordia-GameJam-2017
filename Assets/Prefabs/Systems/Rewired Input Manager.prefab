@@ -272,6 +272,11 @@ MonoBehaviour:
       _tag: 
       _id: 2
       _userAssignable: 1
+    - _name: Interactions
+      _descriptiveName: Character Interactions
+      _tag: 
+      _id: 3
+      _userAssignable: 1
     actionCategoryMap:
       list:
       - categoryId: 0
@@ -280,6 +285,8 @@ MonoBehaviour:
         actionIds: 0000000001000000
       - categoryId: 2
         actionIds: 0200000003000000
+      - categoryId: 3
+        actionIds: 
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -385,8 +392,8 @@ MonoBehaviour:
     customControllerMaps: []
     customControllers: []
     playerIdCounter: 5
-    actionIdCounter: 4
-    actionCategoryIdCounter: 3
+    actionIdCounter: 6
+    actionCategoryIdCounter: 4
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 1
     joystickLayoutIdCounter: 1

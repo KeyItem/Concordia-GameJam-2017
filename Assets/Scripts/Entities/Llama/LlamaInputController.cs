@@ -56,10 +56,5 @@ public class LlamaInputController : MonoBehaviour
 
         playerController.inputMovementVector.Set(leftXAxis, leftYAxis);
         playerController.inputHeadVector.Set(rightXAxis, rightYAxis);
-
-        if (playerInput.GetButtonDown("Jump"))
-        {
-            playerController.Jump();
-        }
     }
 }
