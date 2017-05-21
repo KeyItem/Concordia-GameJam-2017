@@ -59,11 +59,16 @@ public class LlamaPlayerController : MonoBehaviour
 
     public bool isGrounded = true;
 
+    [Header("Horn List")]
+    public GameObject[] hornList;
+
     [Header("Debug")]
     public Vector2 inputMovementVector;
     public Vector2 inputHeadVector;
     [Space(10)]
     public float currentVelocity;
+
+    private bool isInitialized = false;
     
     private void Start()
     {
@@ -150,13 +155,18 @@ public class LlamaPlayerController : MonoBehaviour
         hornController = hornCollider.GetComponent<LlamaHornController>();
 
         playerStock = GetComponent<PlayerStock>();
+
+        isInitialized = true;
     }
 
     private void ReadInput()
     {       
-        directionVector = inputMovementVector.normalized;
+        if (isInitialized)
+        {
+            directionVector = inputMovementVector.normalized;
 
-        headVector.Set(inputHeadVector.x, 0, inputHeadVector.y);
+            headVector.Set(inputHeadVector.x, 0, inputHeadVector.y);
+        }
     }
 
     private void ManageBodyMovement()
@@ -267,5 +277,10 @@ public class LlamaPlayerController : MonoBehaviour
         {
             Debug.Log("Game Over for " + gameObject.name);
         }
+    }
+
+    public void SpawnHorn(Horn hornToSpawn)
+    {
+        GameObject newHorn = Instantiate(hornToSpawn.hornGameObject, hornCollider.transform.position, hornCollider.transform.rotation, hornCollider.transform) as GameObject;
     }
 }

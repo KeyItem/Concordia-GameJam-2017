@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Rewired;
 
 public class CharacterSelection : MonoBehaviour {
@@ -68,7 +69,7 @@ public class CharacterSelection : MonoBehaviour {
         SaveCharacterSelection();
 
         //Load Scene Script
-        Debug.Log("Make it load the scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 	public void EnableStartMatch(){
 			

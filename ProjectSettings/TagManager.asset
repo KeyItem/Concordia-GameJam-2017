@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Object
   - PlayerPanel
+  - MapManager
+  - LobbyVariables
   layers:
   - Default
   - TransparentFX
