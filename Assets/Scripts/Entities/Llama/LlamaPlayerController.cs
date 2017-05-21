@@ -67,6 +67,8 @@ public class LlamaPlayerController : MonoBehaviour
     public float currentVelocity;
 
     private bool isInitialized = false;
+
+	public bool canMove = true;
     
     private void Start()
     {
@@ -171,20 +173,23 @@ public class LlamaPlayerController : MonoBehaviour
         {
             if (isGrounded)
             {
-                currentVelocity = mainBody.velocity.magnitude;
+				if (canMove) {
+					currentVelocity = mainBody.velocity.magnitude;
 
-                targetSpeed = baseMovementSpeed * inputMovementVector.magnitude;
+					targetSpeed = baseMovementSpeed * inputMovementVector.magnitude;
 
-                movingVector = transform.forward * targetSpeed;
+					movingVector = transform.forward * targetSpeed;
 
-                if (currentVelocity < maxMovementSpeed)
-                {
-                    mainBody.AddForce(movingVector * Time.fixedDeltaTime, ForceMode.Impulse);
-                }
-                else
-                {
-                    mainBody.velocity = (transform.forward * maxMovementSpeed);
-                }
+					if (currentVelocity < maxMovementSpeed)
+					{
+						mainBody.AddForce(movingVector * Time.fixedDeltaTime, ForceMode.Impulse);
+					}
+					else
+					{
+						mainBody.velocity = (transform.forward * maxMovementSpeed);
+					}
+				}
+                
             }          
         }
 
@@ -272,4 +277,17 @@ public class LlamaPlayerController : MonoBehaviour
     {
         GameObject newHorn = Instantiate(hornToSpawn.hornGameObject, hornCollider.transform.position, hornCollider.transform.rotation, hornCollider.transform) as GameObject;
     }
+
+	public void GetStunned(){
+		StartCoroutine (StopMovementForXSeconds ());
+	}
+
+	private IEnumerator StopMovementForXSeconds()
+	{
+		canMove = false;
+
+		yield return new WaitForSeconds (0.8f);
+
+		canMove = true;
+	}
 }

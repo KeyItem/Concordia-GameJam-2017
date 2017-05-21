@@ -32,7 +32,7 @@ public class LlamaHornController : MonoBehaviour
 
             impulseApplied = collision.relativeVelocity.magnitude;
 
-            if (hitObject.CompareTag("Player") || hitObject.CompareTag("Object"))
+            if (hitObject.CompareTag("Object"))
             {
                 if (hitObject.GetComponent<Rigidbody>())
                 {
@@ -45,6 +45,21 @@ public class LlamaHornController : MonoBehaviour
                     Debug.Log(gameObject.name + " Hit " + collision.collider.gameObject.name + " with " + baseForce + " of Force");
                 }
             }
+			else if (hitObject.CompareTag("Player"))
+				{
+					if (hitObject.GetComponent<Rigidbody>())
+					{
+						Vector3 interceptVec = (hitObject.transform.position - transform.position).normalized;
+
+						interceptVec.y = 0;
+
+						hitObject.GetComponent<LlamaPlayerController> ().GetStunned ();
+
+						hitObject.GetComponent<Rigidbody>().AddForce(interceptVec * baseForce, ForceMode.Impulse);
+
+						Debug.Log(gameObject.name + " Hit " + collision.collider.gameObject.name + " with " + baseForce + " of Force");
+					}
+				}
         }
     }
 
