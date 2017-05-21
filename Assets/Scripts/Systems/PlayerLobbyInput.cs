@@ -6,8 +6,12 @@ using Rewired;
 public class PlayerLobbyInput : MonoBehaviour {
 
 	private Player playerInput;
-	private bool isAssigned = false;
 	public PlayerNumber playerNumber;
+	public bool isAssigned = false;
+	public bool hasPickedCharacter = false;
+	public bool hasPickedHorn = false;
+	public bool hasConfirmed = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,13 +24,17 @@ public class PlayerLobbyInput : MonoBehaviour {
 	}
 	public void AssignInput(int playerToAssign){
 		playerInput = ReInput.players.GetPlayer (playerToAssign);
-		isAssigned = true;
+	//	isAssigned = true;
 	}
 	private void ReadInput(){
 		if (playerInput.GetButtonDown ("Accept")) {
 			//call accept
 		}
-	//	if
+		if (playerInput.GetButtonDown ("Decline")) {
+		}
+		//if (playerInput.GetAxis ("MenuAxis")) {
+			
+		//}
 	}
 
 	private void Initialize(){
@@ -48,5 +56,8 @@ public class PlayerLobbyInput : MonoBehaviour {
 
 		}
 	}
+
+
+
 }
 
