@@ -22,10 +22,11 @@ GameObject:
   - component: {fileID: 54200336066074654}
   - component: {fileID: 65522663137009134}
   - component: {fileID: 144773810356481946}
+  - component: {fileID: 75169658229143876}
   m_Layer: 13
   m_Name: Spine_Upper_Neck
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -42,7 +43,7 @@ GameObject:
   m_Layer: 13
   m_Name: Spine__Upper_Back
   m_TagString: Untagged
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -72,7 +73,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4824403455864206}
   - component: {fileID: 137090445494298256}
-  - component: {fileID: 114762663315607690}
   m_Layer: 0
   m_Name: Llama_Model
   m_TagString: Untagged
@@ -96,7 +96,7 @@ GameObject:
   m_Layer: 13
   m_Name: PlayerLlamaRed
   m_TagString: Player
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -174,7 +174,7 @@ GameObject:
   m_Layer: 13
   m_Name: Spine_Head
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -207,7 +207,7 @@ GameObject:
   m_Layer: 13
   m_Name: HornCollider
   m_TagString: Untagged
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -225,7 +225,7 @@ GameObject:
   m_Layer: 13
   m_Name: Spine_Lower_Neck
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -609,8 +609,8 @@ Rigidbody:
   m_GameObject: {fileID: 1020430010427216}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -639,8 +639,8 @@ Rigidbody:
   m_GameObject: {fileID: 1545353376598664}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -669,8 +669,8 @@ Rigidbody:
   m_GameObject: {fileID: 1278204078577168}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -775,6 +775,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!75 &75169658229143876
+ConstantForce:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1020430010427216}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 1, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!75 &75287064624631774
 ConstantForce:
   m_ObjectHideFlags: 1
@@ -802,18 +813,6 @@ MonoBehaviour:
   leftYAxis: 0
   rightXAxis: 0
   rightYAxis: 0
---- !u!114 &114762663315607690
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1036740623039788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cbafe678eef549fd81e21134a9472be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 1
 --- !u!114 &114791162416500742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -833,6 +832,12 @@ MonoBehaviour:
   moveSmoothTime: 0.5
   turningSmoothTime: 0.05
   hornCollider: {fileID: 1491566096750700}
+  listOfJoints:
+  - {fileID: 54034140730016782}
+  - {fileID: 54709106216682692}
+  - {fileID: 54200336066074654}
+  - {fileID: 54847107829937644}
+  - {fileID: 54958816667218952}
   baseNeckControlSpeed: 250
   isMovingHead: 0
   jumpForce: 10
@@ -855,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519530fb6ebf9841843a2526acf5f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseForce: 500
+  baseForce: 15
 --- !u!137 &137090445494298256
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -930,28 +935,28 @@ CharacterJoint:
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: -0.5718737, y: -0.000000014901158, z: 0.00000008268377}
   serializedVersion: 2
-  m_SwingAxis: {x: 0, y: 1, z: 0}
+  m_SwingAxis: {x: 1, y: 1, z: 1}
   m_TwistLimitSpring:
-    spring: 100
-    damper: 50
+    spring: 0
+    damper: 0
   m_LowTwistLimit:
-    limit: -10
+    limit: -20
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 30
+    limit: 70
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 100
-    damper: 50
+    spring: 0
+    damper: 0
   m_Swing1Limit:
-    limit: 30
-    bounciness: 1
+    limit: 40
+    bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 30
-    bounciness: 1
+    limit: 40
+    bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
   m_ProjectionDistance: 0.1
@@ -974,26 +979,26 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 100
-    damper: 50
+    spring: 0
+    damper: 0
   m_LowTwistLimit:
-    limit: -10
+    limit: -20
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 30
+    limit: 70
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 100
-    damper: 50
+    spring: 0
+    damper: 0
   m_Swing1Limit:
-    limit: 30
-    bounciness: 1
+    limit: 40
+    bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 30
-    bounciness: 1
+    limit: 40
+    bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
   m_ProjectionDistance: 0.1
@@ -1016,26 +1021,26 @@ CharacterJoint:
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
-    spring: 100
-    damper: 50
+    spring: 0
+    damper: 0
   m_LowTwistLimit:
-    limit: -10
+    limit: -20
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
-    limit: 30
+    limit: 70
     bounciness: 0
     contactDistance: 0
   m_SwingLimitSpring:
-    spring: 100
-    damper: 50
+    spring: 0
+    damper: 0
   m_Swing1Limit:
-    limit: 30
-    bounciness: 1
+    limit: 40
+    bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 30
-    bounciness: 1
+    limit: 40
+    bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
   m_ProjectionDistance: 0.1

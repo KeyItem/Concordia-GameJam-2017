@@ -35,6 +35,8 @@ public class LlamaPlayerController : MonoBehaviour
     [Header("Llama Neck Movement Values")]
     public GameObject hornCollider;
     [Space(10)]
+    public Rigidbody[] listOfJoints;
+    [Space(10)]
     public float baseNeckControlSpeed;
 
     private Vector3 headVector;
@@ -56,6 +58,11 @@ public class LlamaPlayerController : MonoBehaviour
     public Vector2 inputHeadVector;
     [Space(10)]
     public float currentVelocity;
+    
+    private void Start()
+    {
+        InitializePlayer();
+    }
 
     private void Update()
     {
@@ -71,6 +78,66 @@ public class LlamaPlayerController : MonoBehaviour
         ManageBodyRotation();
 
         ManageHeadMovement();
+    }
+
+    public void InitializePlayer()
+    {
+        LayerMask playerMask;
+
+        switch(teamColor)
+        {
+            case PlayerColor.RED:
+                playerMask = LayerMask.NameToLayer("PlayerRed");
+
+                gameObject.layer = playerMask;
+
+                hornCollider.layer = playerMask;
+
+                foreach(Rigidbody joint in listOfJoints)
+                {
+                    joint.gameObject.layer = playerMask;
+                }
+                break;
+
+            case PlayerColor.BLUE:
+                playerMask = LayerMask.NameToLayer("PlayerBlue");
+
+                gameObject.layer = playerMask;
+
+                hornCollider.layer = playerMask;
+
+                foreach(Rigidbody joint in listOfJoints)
+                {
+                    joint.gameObject.layer = playerMask;
+                }
+                break;
+
+            case PlayerColor.GREEN:
+                playerMask = LayerMask.NameToLayer("PlayerGreen");
+
+                gameObject.layer = playerMask;
+
+                hornCollider.layer = playerMask;
+
+                foreach (Rigidbody joint in listOfJoints)
+                {
+                    joint.gameObject.layer = playerMask;
+                }
+                break;
+
+            case PlayerColor.YELLOW:
+                playerMask = LayerMask.NameToLayer("PlayerYellow");
+
+                gameObject.layer = playerMask;
+
+                hornCollider.layer = playerMask;
+
+                foreach (Rigidbody joint in listOfJoints)
+                {
+                    joint.gameObject.layer = playerMask;
+                }
+                break;
+        }
     }
 
     private void ReadInput()
