@@ -61,7 +61,7 @@ public class CharacterSelection : MonoBehaviour {
 				hornToStartGameList [i] = null;
 			}
 		}
-		GameObject.Find ("VariableManager").GetComponent<LobbyVariables> ().SaveInformationForGame;
+		GameObject.Find ("VariableManager").GetComponent<LobbyVariables> ().SaveInformationForGame();
 	}
 
     public void StartGame() {
