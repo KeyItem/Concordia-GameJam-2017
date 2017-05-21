@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerCharacter : MonoBehaviour {
 
+	[Space(10)]
+	[Header("Current Player Information")]
+	public PlayerClass currentPlayer;
+	[Space(10)]
+
+	[Space(10)]
 	[Header("Character Identification")]
 	[Space(10)]
 	public GameObject characterGameObject;
@@ -21,16 +27,22 @@ public class PlayerCharacter : MonoBehaviour {
 	public float characterIncomingKnockbackModifier;
 	[Range(0.0f, 10.0f)]
 	public float characterOutgoingKnockbackModifier;
-	public float victoryCount;
-	public float knockoutCount;
 	[Tooltip("This value makes magic under the hood, modify for fun 0-infinity")]
 	public float spronginess;
+
+	[Space(10)]
+	[Header("Horn Info")]
+	[Space(10)]
+	public GameObject playerHorn;
+
 
 	[Space(10)]
 	[Header("CharacterPersonality")]
 	[Space(10)]
 	public Sprite characterPortrait;
 	public AudioClip victoryBleat;
+	public AudioClip painBleat;
+	public AudioClip smackBleat;
 
 
 
@@ -42,19 +54,12 @@ public class PlayerCharacter : MonoBehaviour {
 	void Update () {
 	}
 
-	public void AddToVictoryCount(){
-		victoryCount++;
-	}
 
-	public void AddToKnockoutCount(){
-		knockoutCount++;
-	}
 	public void DebugPrfloatout(){
 		Debug.Log ("Does the characterCharacter have a name? " + TrueIfNotNull(characterName) + " and its name is: " + characterName);
 		Debug.Log ("Does the characterCharacter have a GameObject? " + TrueIfNotNull(characterGameObject) + " and its name is: " + characterGameObject.name);
 		Debug.Log ("Does the characterCharacter have an ID? " + TrueIfNotNull(characterID) + " and its ID is: " + characterID);
 		Debug.Log ("Does the characterCharacter have an characterVariantNumber? " + TrueIfNotNull(characterVariantNumber) + " and its characterVariantNumber is: " + characterVariantNumber);
-		Debug.Log ("Does the characterCharacter have an victoryCount? " + TrueIfNotNull(victoryCount) + " and its victoryCount is: " + victoryCount);
 		Debug.Log ("Does the characterCharacter have an victoryBleat? " + TrueIfNotNull(victoryBleat) + " and its victoryBleat is: " + victoryBleat.name);
 		Debug.Log ("Does the characterCharacter have an spronginess? " + TrueIfNotNull(spronginess) + " and its spronginess is: " + spronginess);
 		Debug.Log ("Does the characterCharacter have an characterCharacterIncomingKnockbackModifier? " + TrueIfNotNull(characterIncomingKnockbackModifier) + " and its characterIncomingKnockbackModifier is: " + characterIncomingKnockbackModifier);
