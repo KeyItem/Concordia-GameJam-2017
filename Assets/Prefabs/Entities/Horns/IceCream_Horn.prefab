@@ -192,5 +192,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hornGameObject: {fileID: 0}
-  hornName: Ice Cream Cone
-  hornPortrait: {fileID: 0}
+  hornName: Ice Cream Horn
+  hornPortrait: {fileID: 21300000, guid: 4bf7e849d23ed4e3b8dec86e682b2773, type: 3}
