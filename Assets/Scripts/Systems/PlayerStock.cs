@@ -32,11 +32,9 @@ public class PlayerStock : MonoBehaviour {
 
 	public void AddStock(){
 		currentStock++;
-		Debug.Log (thisPlayer.name + " has" + currentStock + " lives left");
 	}
 	public void RemoveStock(){
 		currentStock--;
-		Debug.Log (thisPlayer.name + " has" + currentStock + " lives left");
 	}
 		
 	public bool IsPlayerAlive(){

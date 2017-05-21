@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class LlamaPlayerController : MonoBehaviour
 {
-    private PlayerStock playerStock;
-
     [Header("Player Attributes")]
     public PlayerColor teamColor;
 
@@ -154,8 +152,6 @@ public class LlamaPlayerController : MonoBehaviour
 
         hornController = hornCollider.GetComponent<LlamaHornController>();
 
-        playerStock = GetComponent<PlayerStock>();
-
         isInitialized = true;
     }
 
@@ -269,14 +265,7 @@ public class LlamaPlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(respawnTime);
 
-        transform.position = Vector3.zero + Vector3.up;
-
-        playerStock.RemoveStock();
-
-        if (!playerStock.IsPlayerAlive())
-        {
-            Debug.Log("Game Over for " + gameObject.name);
-        }
+        transform.position = Vector3.zero + Vector3.up;    
     }
 
     public void SpawnHorn(Horn hornToSpawn)
