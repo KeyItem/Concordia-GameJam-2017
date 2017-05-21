@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class LlamaHeadCollisionController : MonoBehaviour
+public class LlamaHornController : MonoBehaviour
 {
     [Header("Collision Interactions Values")]
     private GameObject hitObject;

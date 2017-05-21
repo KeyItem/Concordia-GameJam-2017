@@ -34,6 +34,8 @@ public class LlamaPlayerController : MonoBehaviour
 
     [Header("Llama Neck Movement Values")]
     public GameObject hornCollider;
+
+    private LlamaHornController hornController;
     [Space(10)]
     public Rigidbody[] listOfJoints;
     [Space(10)]
@@ -138,6 +140,8 @@ public class LlamaPlayerController : MonoBehaviour
                 }
                 break;
         }
+
+        hornController = hornCollider.GetComponent<LlamaHornController>();
     }
 
     private void ReadInput()
